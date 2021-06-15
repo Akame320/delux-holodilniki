@@ -1,0 +1,62 @@
+mixin col(object)
+    .calculate-section__col
+        if(object.checked)
+            input(type='radio' value=object.value name='type-problems' id=object.id checked ).input-step-1
+        else
+            input(type='radio' value=object.value name='type-problems' id=object.id ).input-step-1
+        label(for=object.id).calculate-section__col-inner !{object.text}
+mixin col2(object)
+    .calculate-section__col
+        if(object.checked)
+            input(type='radio' value=object.value name='type-brand' checked id=object.id).input-step-2
+        else
+            input(type='radio' value=object.value name='type-brand' id=object.id).input-step-2
+        label(for=object.id).calculate-section__col-inner
+            picture
+                source(srcset=object.img + '.webp' media="(min-width: 767px)" alt=object.alt type='image/webp')
+                img(src=object.img + '.jpg' alt=object.alt)
+sectiom.calculate-section
+    .container
+        .calculate-section__wrapper
+            form.calculate-section__inner.form-submit
+                .calculate-section__number
+                    .section-number 03
+                .calculate-section__title
+                    h2.title Расчитайте стоимость ремонта неисправностей стиральной машины
+                .calculate-section__step
+                    .calculate-section__step-circle 1 <br> шаг
+                    .calculate-section__step-text Какая проблема с вашей стиральной машиной?
+                .calculate-section__data.step-1
+                    +col({id: 'calculate-1', values: 'НЕ ВКЛЮЧАЕТСЯ', text: 'НЕ ВКЛЮЧАЕТСЯ', checked: true})
+                    +col({id: 'calculate-2', values: 'ПРОТЕКАЕТ', text: 'ПРОТЕКАЕТ'})
+                    +col({id: 'calculate-3', values: 'НЕ ВРАЩАЕТСЯ БАРАБАН', text: 'не вращается барабан'})
+                    +col({id: 'calculate-4', values: 'НЕ ЗАЛИВАЕТ ВОДУ', text: 'НЕ ЗАЛИВАЕТ ВОДУ'})
+                    +col({id: 'calculate-5', values: 'НЕ ГРЕЕТ ВОДУ', text: 'НЕ ГРЕЕТ ВОДУ'})
+                    +col({id: 'calculate-6', values: 'НЕ ОТЖИМАЕТ ', text: 'НЕ ОТЖИМАЕТ '})
+                .calculate-section__step
+                    .calculate-section__step-circle 2 <br>  шаг
+                    .calculate-section__step-text Выберите бренд вашего холодильника
+                .calculate-section__data.step-2
+                    +col2({id: "calculate-step-1" ,value: 'Gorenje', img: 'images/content/calculate-section/3', checked: true})
+                    +col2({id: "calculate-step-2" ,value: 'Bosch', img: 'images/content/calculate-section/1'})
+                    +col2({id: "calculate-step-3" ,value: 'ardo', img: 'images/content/calculate-section/2'})
+                    +col2({id: "calculate-step-4" ,value: 'philips', img: 'images/content/calculate-section/4'})
+                    +col2({id: "calculate-step-5" ,value: 'LG', img: 'images/content/calculate-section/5'})
+                    .calculate-section__col
+                        input(type="radio" value='Другой бренд' name="type-brand" id='calculate-step-6').input-step-2
+                        label(for='calculate-step-6').calculate-section__col-inner
+                            span.text-link Другой бренд
+                .calculate-section__step
+                    .calculate-section__step-text Оставьте свой номер, чтобы получить расчёт ремонта
+                .calculate-section__data.step-3
+                    .calculate-section__input-text
+                        .label-text
+                            input(type='text' id='tel' placeholder='Телефон*(вводится без 8)' name='tel').input-text.js-mask
+                    .calculate-section__input-submit
+                        .label-submit
+                            input(type='submit' value='Получить  расчет стоимости').input-submit.ajax-submit
+                        span <input type="hidden" name="utm_source" value="">
+                        span <input type="hidden" name="utm_medium" value="">
+                        span <input type="hidden" name="utm_campaign" value="">
+                        span <input type="hidden" name="utm_content" value="">
+                        span <input type="hidden" name="utm_term" value="">

@@ -1,0 +1,292 @@
+extends base/_layout
+block head
+    title Сервис центр по ремонту холодильников
+block page
+    section.main-section
+        .main-section__wrapper
+            .main-section__bg
+                +setImg({
+                    webp: 'images/content/main-section/bg-pc.webp',
+                    img: 'images/content/main-section/bg-pc.jpg',
+                    set: 'images/content/main-section/bg-pc',
+                })
+            .main-section__inner
+                .container
+                    .price-section__number
+                        .section-number 01
+                    .main-section__data
+                        h1.title.main-section__title.
+                            БЫСТРЫЙ, КАЧЕСТВЕННЫЙ Ремонт холодильника в день обращения от  5 000 тг
+                        ul.main-section__list
+                            +list({name: 'clock', text: 'Выезд в течение 15 минут'})
+                            +list({name: 'warranty', text: 'Гарантия 12 месяцев на все виды работ'})
+                            +list({name: 'original', text: 'Оригинальные запчасти напряму от заводов производителей'}).main-section__whatssap
+                        .main-section__whatssap
+                            .main-section__whatssap-title <span class='text-bold'>Оставьте заявку на бесплатный выезд и диагностику</span> вашей стиральной машины
+                            .main-section__whatssap-btn
+                                a(href='dfgdfg').btn.btn--blue написать нам в Whats app
+    section.price-section
+        .container
+            .price-section__wrapper
+                .price-section__inner
+                    .price-section__number
+                        .section-number 02
+                    .price-section__title
+                        h2.title СТОИМОСТЬ РЕМОНТА <br> ХОЛОДИЛЬНИКА  в Алматы
+                    .price-section__subtitle
+                        +svgIcon({name: 'working'})
+                        span Диагностика и выезд мастера - БЕСПЛАТНО
+                    .price-section__data
+                        +col({
+                            img: "images/content/price-section/0",
+                            title: "Замена подшипников и сальников",
+                            price: "от 2 500 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/1",
+                            title: "Замена УБЛ (устройство блокировки люка)",
+                            price: "от 2500 тг"
+                        })
+                        +col({img: "images/content/price-section/2", title: "Ремонт барабана", price: "от 3000 тг"})
+                        +col({
+                            img: "images/content/price-section/3",
+                            title: "Замена заливного клапана",
+                            price: "от 1500 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/4",
+                            title: "Ремонт платы управления",
+                            price: "от 4500 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/5",
+                            title: "Извлечение посторонних предметов (без разборки бака)",
+                            price: "от 1500 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/6",
+                            title: "Замена ТЭНа (нагревательный элемент)",
+                            price: "от 5000 тг"
+                        })
+                        +col({img: "images/content/price-section/7", title: "Замена аквастопа", price: "от 5000 тг"})
+                        +col({
+                            img: "images/content/price-section/8",
+                            title: "Замена сливного насоса (помпы)",
+                            price: "от 4500 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/9",
+                            title: "Замена ручки, петли люка",
+                            price: "от 3500 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/10",
+                            title: "Замена манжеты люка",
+                            price: "от 3500 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/11",
+                            title: "Замена пресостата (датчика уровня воды)",
+                            price: "от 2500 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/12",
+                            title: "Замена электродвигателя",
+                            price: "от 3500 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/13",
+                            title: "Замена термостата (датчик температуры)",
+                            price: "от 3500 тг"
+                        })
+                    .price-section__text
+                        p *точная стоимость ремонта стиральной машины зависит от производителя и модели, будет известна после диагностики мастером.
+    sectiom.calculate-section
+        .container
+            .calculate-section__wrapper
+                form.calculate-section__inner.form-submit
+                    .calculate-section__number
+                        .section-number 03
+                    .calculate-section__title
+                        h2.title Расчитайте стоимость ремонта неисправностей стиральной машины
+                    .calculate-section__step
+                        .calculate-section__step-circle 1 <br> шаг
+                        .calculate-section__step-text Какая проблема с вашей стиральной машиной?
+                    .calculate-section__data.step-1
+                        +col-1({id: 'calculate-1', text: 'НЕ ВКЛЮЧАЕТСЯ ХОЛОДИЛЬНИК', checked: true})
+                        +col-1({id: 'calculate-2', text: 'НЕ ОХЛАЖДАЕТ ХОЛОДИЛЬНАЯ КАМЕРА'})
+                        +col-1({id: 'calculate-3', text: 'ТЕЧЕТ ХОЛОДИЛЬНИК'})
+                        +col-1({id: 'calculate-4', text: 'ХОЛОДИЛЬНИК ПЕРЕМОРАЖИВАЕТ'})
+                        +col-1({id: 'calculate-5', text: 'ХОЛОДИЛЬНИК ГРОМКО РАБОТАЕТ (ШУМИТ)'})
+                        +col-1({id: 'calculate-6', text: 'НЕ РАБОТАЕТ КОМПРЕССОР ХОЛОДИЛЬНИКА'})
+                    .calculate-section__step
+                        .calculate-section__step-circle 2 <br>  шаг
+                        .calculate-section__step-text Выберите бренд вашего холодильника
+                    .calculate-section__data.step-2
+                        +col-2({id: "calculate-step-1", img: 'images/content/calculate-section/3', checked: true})
+                        +col-2({id: "calculate-step-2", img: 'images/content/calculate-section/1'})
+                        +col-2({id: "calculate-step-3", img: 'images/content/calculate-section/2'})
+                        +col-2({id: "calculate-step-4", img: 'images/content/calculate-section/4'})
+                        +col-2({id: "calculate-step-5", img: 'images/content/calculate-section/5'})
+                        .calculate-section__col
+                            input(type="radio" name="step-2" id='calculate-step-6').input-step-2
+                            label(for='calculate-step-6').calculate-section__col-inner
+                                span.text-link Другой бренд
+                    .calculate-section__step
+                        .calculate-section__step-text Оставьте свой номер, чтобы получить расчёт ремонта
+                    .calculate-section__data.step-3
+                        .calculate-section__input-text
+                            .label-text
+                                input(type='text' id='tel' placeholder='Телефон*(вводится без 8)' name='tel').input-text.js-mask
+                        .calculate-section__input-submit
+                            .label-submit
+                                input(type='submit' value='Получить  расчет стоимости').input-submit.ajax-submit
+                            span <input type="hidden" name="utm_source" value="">
+                            span <input type="hidden" name="utm_medium" value="">
+                            span <input type="hidden" name="utm_campaign" value="">
+                            span <input type="hidden" name="utm_content" value="">
+                            span <input type="hidden" name="utm_term" value="">
+    section.reviews-section
+        .container
+            .reviews-section__wrapper
+                .reviews-section__inner
+                    .reviews-section__number
+                        .section-number 04
+                    .reviews-section__title
+                        h2.title.
+                            Обратная связь клиентов
+                            - лучшая оценка нашей работы
+                    .reviews-section__slider-wrapper
+                        .reviews-section__arrow
+                            .reviews-section__arrow-prev
+                                +svgIcon({name: 'arrow'})
+                            .reviews-section__arrow-next
+                                +svgIcon({name: 'arrow'})
+                        .reviews-section__slider
+                            +slide({img: 'images/content/reviews-section/0'})
+                            +slide({img: 'images/content/reviews-section/0'})
+                            +slide({img: 'images/content/reviews-section/0'})
+                            +slide({img: 'images/content/reviews-section/0'})
+    section.team-section
+        .container
+            .team-section__wrapper
+                .team-section__inner
+                    .team-section__number
+                        .section-number 05
+                    .team-section__title
+                        h2.title Команда мастеров
+                    .team-section__data
+                        +col-3({
+                            img: 'images/content/team-section/0',
+                            name: 'Евгений Обухов',
+                            status: 'Мастер электронщик',
+                            exp: 'Опыт работы 7 лет'
+                        })
+                        +col-3({
+                            img: 'images/content/team-section/1',
+                            name: 'Вячеслав Ким',
+                            status: 'Мастер',
+                            exp: 'Опыт работы 15 лет'
+                        })
+                        +col-3({
+                            img: 'images/content/team-section/2',
+                            name: 'Матусков Сергей',
+                            status: 'Мастер',
+                            exp: 'Опыт работы 17 лет'
+                        })
+    section.questions-section
+        .container
+            .questions-section__wrapper
+                .questions-section__inner
+                    .questions-section__number
+                        .section-number 06
+                    .questions-section__title
+                        h2.title Часто задаваемые вопросы:
+                    .questions-section__subtitle
+                        .subtitle На любой вопрос, которой Вас мучает - вы получите грамотный и быстрый ответ
+                    .questions-section__data
+                        +item({
+                            title: 'Не крутится барабан в стиральной машине? ',
+                            text: '<p>Существует несколько причин, по которым барабан может не крутиться: порвался (растянулся) приводной ремень, необходима замена ремня, износились щетки двигателя, поломался двигатель (если оборвалась обмотка ротора и стартера, то барабан не сможет крутиться вообще) неисправность модуля (программатора) машина не получает нужные сигналы, потому не может работать, повредились подшипники (нужна замена подшипников и сальников)</p>'
+                        })
+                        +item({
+                            text: '<p>При отсутствии внешних повреждений на самой кнопке включении, вполне может оказаться, что причиной поломки стиральной машинки может быть неисправность розетки, выход из строя или выключенный автомат защиты УЗО или отсутствие электроэнергии в доме. Возможны и более серьезные неисправности: ремонт модуля управления (программатор), снятие блокировки, неисправность системы блокировки дверцы; неисправность фильтра помех - данная деталь отвечает за гашение электромагнитных помех в электрической проводке;</p>',
+                            title: 'почему СТИРАЛЬНАЯ МАШИНА НЕ ВКЛЮЧАЕТСЯ?'
+                        })
+                        +item({
+                            title: '<p>почему СТИРАЛЬНАЯ МАШИНА НЕ ВКЛЮЧАЕТСЯ?</p>',
+                            text: 'Причин множество, основными являются следующие: <br> а) сломались патрубки, срок службы этих деталей 1,5-2 года, после требуется их замена; б) если стиральная машина течет снизу и при этом издает посторонний шум, может оказаться, что проблема в сальнике или подшипнике; в) при проблемах с баком стиральные машины начинают подтекать в процессе стирки; г) износ манжеты, резиновая накладка на дверце приходит в негодность со временем.'
+                        })
+                        +item({
+                            title: '<p>Почему подтекает стиральная машина? </p>',
+                            text: 'Причин множество, основными являются следующие: <br> а) сломались патрубки, срок службы этих деталей 1,5-2 года, после требуется их замена; б) если стиральная машина течет снизу и при этом издает посторонний шум, может оказаться, что проблема в сальнике или подшипнике; в) при проблемах с баком стиральные машины начинают подтекать в процессе стирки; г) износ манжеты, резиновая накладка на дверце приходит в негодность со временем.'
+                        })
+                        +item({
+                            text: '<p> Стиральная машина не нагревает воду - это наиболее частая проблема, причин неисправности всего три: стиральная машина не может нагреть воду без качественного нагревательного элемента (ТЭНа), если датчик температурного режима не работает или работает некорректно, то он не может подавать правильные сигналы ТЭНу и нагрев происходит неправильно или вообще отсутствует, вышел из строя программатор (модуль управления). Залог качественного ремонт - правильная диагностика неисправности.</p> <p>Стоимость ремонт зависит от определенной неисправности, стоимости запчастей, производителя и модели стиральной машины,</p> <p>замена нагревательного элемент ТЭН; <br> неисправен термодатчик - замена термодатчик;<br> неисправен модуль управления (программатор);</p>',
+                            title: 'Стиральная машины не нагревает воду. В чем причины?'
+                        })
+                        +item({
+                            text: '<p>Распространенная поломок стиральных машин является невозможность стиральной машины сливать воду частично или полностью.</p> <p>Возможные причины:  а) засорился фильтр в сливном насосе, требуется его чистка; б) засорилась канализационная система; в) засорился или согнут, неправильно установлен сливной шланг;  г) сломан насос;  д) вышел из строя датчик уровня воды (прессостат), не работает модуль управления. </p>',
+                            title: 'Почему не силвается вода?'
+                        })
+
+
+
+
+mixin list(object)
+    li
+        +svgIcon({name: object.name})
+        span !{object.text}
+
+mixin col(object)
+    .price-section__col
+        .price-section__col-inner
+            .price-section__col-img
+                picture
+                    source(srcset=object.img + '.webp' media="(min-width: 767px)" alt=object.alt type='image/webp')
+                    img(src=object.img + '.jpg' alt=object.alt)
+            .price-section__col-data
+                .price-section__col-title !{object.title}
+                .price-section__col-price !{object.price}
+mixin col-1(object)
+    .calculate-section__col
+        if(object.checked)
+            input(type='radio' name='type-problems' id=object.id checked ).input-step-1
+        else
+            input(type='radio' name='type-problems' id=object.id ).input-step-1
+        label(for=object.id).calculate-section__col-inner !{object.text}
+mixin col-2(object)
+    .calculate-section__col
+        if(object.checked)
+            input(type='radio' name='type-brand' checked id=object.id).input-step-2
+        else
+            input(type='radio' name='type-brand' id=object.id).input-step-2
+        label(for=object.id).calculate-section__col-inner
+            picture
+                source(srcset=object.img + '.webp' media="(min-width: 767px)" alt=object.alt type='image/webp')
+                img(src=object.img + '.jpg' alt=object.alt)
+mixin slide(object)
+    .reviews-section__slide
+        .reviews-section__slide-inner
+            picture
+                source(srcset=object.img + '-pc.webp' media="(min-width: 767px)" alt=object.alt type='image/webp')
+                source(srcset=object.img + '-mb.webp' media="(min-width: 0) and (max-width: 767px)" alt=object.alt type='image/webp')
+                img(src=object.img + '-pc.png' srcset=object.img + '-mb.png' + ' 767w' alt=object.alt)
+mixin col-3(object)
+    .team-section__col
+        .team-section__col-inner
+            .team-section__col-img
+                +setImg({
+                    webp: object.img + '-pc.webp',
+                    img: object.img + '-pc.jpg',
+                    set: object.img + '-mb'
+                })
+            .team-section__col-name !{object.name}
+            .team-section__col-status !{object.status}
+            .team-section__col-exp !{object.exp}
+mixin item(object)
+    .questions-section__item
+        .questions-section__item-header
+            span !{object.title}
+            +svgIcon({name: 'arrow'})
+        .questions-section__item-body !{object.text}
